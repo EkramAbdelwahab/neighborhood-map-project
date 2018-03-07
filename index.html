@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Neighborhood Map Project, touristic places</title>
+	<link rel="stylesheet" href="CSS/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+</head>
+<body>
+	
+	
+	<div id="myApp" class="myApp">
+		<div class="map" id="map">
+			Please Try Again
+		</div>
+		<div class="locationsList" id="locationsList">
+			<div id="searchForPlace" class="searchForPlace">
+				<input class="searchBox" id="searchBox" placeholder="Search Place..." data-bind="textInput: searchForPlace, valueUpdate: 'afterkeydown'"/>
+			</div>
+			<ul class="res" id="res" data-bind="foreach: myList">
+				<li class="place" id="place" data-bind="text: locName, click: toggleBounce"></li>
+			</ul>
+		</div>
+	
+	</div>
+	
+	<script src='JS/knockout-3.4.0.js'></script>
+	<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+    </script>
+	
+	<script src='JS/app.js'></script>
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUCHjJwQjeR0UBe6a4mWeNS8JlBWnwi_Y&callback=showMap&libraries=places,geometry" onerror="GoogleMapErrorHandling()"></script>
+</body>
+</html>
